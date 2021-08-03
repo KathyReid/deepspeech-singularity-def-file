@@ -24,7 +24,7 @@ apt-get -y update && apt-get install -y nano
 apt-get -y update && apt-get install -y vim
 
 # Install sox for inference
-apt-get -y update && apt-get install -y sox
+apt-get -y update && apt-get install -y sox libsox-fmt-mp3
 
 # Install pip packages 
 pip3 install gin-config
