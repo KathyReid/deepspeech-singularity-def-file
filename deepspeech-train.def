@@ -1,0 +1,12 @@
+# Custom Singularity Def file for training models using DeepSpeech 
+# Kathy Reid <https://github.com/KathyReid>
+
+# Bootstrap using Docker agent 
+Bootstrap: docker
+
+# Use the deepspeech-train:v0.9.3 container as a base
+From: docker://mozilla/deepspeech-train:v0.9.3
+
+# Run commands once the container has been created 
+%post 
+
