@@ -1,14 +1,21 @@
 # Custom Singularity Def file for training models using DeepSpeech 
-# Kathy Reid <https://github.com/KathyReid>
 
-# Bootstrap using Docker agent 
-Bootstrap: docker
+#---------------------------------------------------------------------
+# bootstrap 
+#---------------------------------------------------------------------
+BootStrap: docker
+From: mozilla/deepspeech-train:v0.9.3
 
-# Use the deepspeech-train:v0.9.3 container as a base
-From: docker://mozilla/deepspeech-train:v0.9.3
+#---------------------------------------------------------------------
+%labels
+#---------------------------------------------------------------------
+MAINTAINER Kathy Reid <https://github.com/KathyReid>
 
-# Run commands once the container has been created 
-%post 
+#---------------------------------------------------------------------
+%post
+#---------------------------------------------------------------------
+
+apt-get update
 
 # Install nano editor
 apt-get -y update && apt-get install -y nano
@@ -20,6 +27,6 @@ apt-get -y update && apt-get install -y vim
 apt-get -y update && apt-get install -y sox
 
 # Install pip packages 
-RUN pip install gin-config
-RUN pip install pyogg
+pip3 install gin-config
+pip3 install pyogg
 
