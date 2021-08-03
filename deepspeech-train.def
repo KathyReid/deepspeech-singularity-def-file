@@ -10,3 +10,16 @@ From: docker://mozilla/deepspeech-train:v0.9.3
 # Run commands once the container has been created 
 %post 
 
+# Install nano editor
+apt-get -y update && apt-get install -y nano
+
+# Install vim editor
+apt-get -y update && apt-get install -y vim
+
+# Install sox for inference
+apt-get -y update && apt-get install -y sox
+
+# Install pip packages 
+RUN pip install gin-config
+RUN pip install pyogg
+
